@@ -1,0 +1,36 @@
+﻿@model RealEstate1.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Sil";
+}
+
+<h2>Sil</h2>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Personel Bilgisi</h4>
+    <hr />
+    <form asp-action="Delete">
+        <dl class="dl-horizontal">
+            <input type="hidden" asp-for="Id" />
+
+            <dt>
+                E-Posta
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                Cep Telefonu
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+        </dl>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-primary" /> |
+            <a asp-action="Index">Listeye geri dön</a>
+        </div>
+    </form>
+</div>

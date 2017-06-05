@@ -1,0 +1,32 @@
+﻿@model RealEstate1.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Detaylar";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Personel Bilgisi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            E-Posta
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Cep Telefonu
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Düzenle</a> |
+    <a asp-action="Index">Listeye geri dön</a>
+</div>

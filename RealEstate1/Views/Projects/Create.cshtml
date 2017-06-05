@@ -1,0 +1,84 @@
+﻿@model RealEstate1.Models.Project
+
+@{
+    ViewData["Title"] = "Daire Ekle";
+}
+
+<h2>Daire Ekle</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ProjectName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ProjectName" class="form-control" />
+                <span asp-validation-for="ProjectName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CompanyName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FloorCount" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FloorCount" class="form-control" />
+                <span asp-validation-for="FloorCount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ApartmentCount" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ApartmentCount" class="form-control" />
+                <span asp-validation-for="ApartmentCount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="CreateDate">Oluşturulma Tarihi</label>
+            <div class="col-md-10">
+                <input class="form-control" type="date" id="CreateDate" name="CreateDate" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="CreateDate" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreatedBy" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreatedBy" class="form-control" />
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="UpdateDate">Güncellenme Tarihi</label>
+            <div class="col-md-10">
+                <input class="form-control" type="date" id="UpdateDate" name="UpdateDate" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="UpdateDate" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UpdatedBy" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UpdatedBy" class="form-control" />
+                <span asp-validation-for="UpdatedBy" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Listeye geri dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
